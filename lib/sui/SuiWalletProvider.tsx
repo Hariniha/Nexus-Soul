@@ -11,7 +11,10 @@ export function SuiWalletProvider({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       <SuiClientProvider networks={networkConfig} defaultNetwork="testnet">
-        <WalletProvider autoConnect>
+        <WalletProvider 
+          autoConnect={false}
+          enableUnsafeBurner={false}
+        >
           {children}
         </WalletProvider>
       </SuiClientProvider>

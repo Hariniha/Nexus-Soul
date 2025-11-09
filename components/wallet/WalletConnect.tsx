@@ -2,12 +2,29 @@
 
 import { ConnectButton, useCurrentAccount, useDisconnectWallet } from '@mysten/dapp-kit';
 import { Wallet, LogOut, Copy, Check } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export function WalletConnect() {
+  const [mounted, setMounted] = useState(false);
   const account = useCurrentAccount();
   const { mutate: disconnect } = useDisconnectWallet();
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Don't render until client-side mounted to avoid hydration issues
+  if (!mounted) {
+    return (
+      <button 
+        className="px-6 py-2.5 bg-[#D97706] text-white font-medium rounded-lg"
+        disabled
+      >
+        Loading...
+      </button>
+    );
+  }
 
   const handleCopy = () => {
     if (account?.address) {
@@ -23,29 +40,10 @@ export function WalletConnect() {
 
   if (!account) {
     return (
-      <>
-        <ConnectButton
-          connectText="Connect Wallet"
-          style={{
-            backgroundColor: '#D97706',
-            color: 'white',
-            padding: '0.625rem 1.5rem',
-            fontWeight: 500,
-            borderRadius: '0.5rem',
-            border: 'none',
-            cursor: 'pointer',
-            transition: 'all 0.3s',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#B45309';
-            e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(217, 119, 6, 0.25)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#D97706';
-            e.currentTarget.style.boxShadow = 'none';
-          }}
-        />
-      </>
+      <ConnectButton
+        connectText="Connect Wallet"
+        className="!px-6 !py-2.5 !bg-[#D97706] hover:!bg-[#B45309] !text-white !font-medium !rounded-lg !border-none transition-all duration-300 hover:!shadow-[0_10px_15px_-3px_rgba(217,119,6,0.25)]"
+      />
     );
   }
 
