@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SYNTHETIC SOULS - AI Digital Twin Platform
 
-## Getting Started
+> A production-grade dark theme AI twin creation platform. Create, manage, and monetize your digital twins with end-to-end encryption and decentralized storage.
 
-First, run the development server:
+## 🚀 Quick Start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **AI Twin Creation**: 3-step wizard to upload data and train AI clones
+- **Encrypted Storage**: Data encrypted with Seal Protocol before storage
+- **Decentralized**: Powered by Sui blockchain + Walrus storage
+- **Marketplace**: Buy and sell access to AI twins
+- **Real-time Chat**: Interactive conversations with your AI twins
+- **Dashboard**: Comprehensive analytics and twin management
 
-## Learn More
+## 🎨 Design System
 
-To learn more about Next.js, take a look at the following resources:
+- **Dark Theme**: #0A0A0A base with amber (#D97706) accents
+- **macOS Fonts**: SF Pro Display/Text for premium feel
+- **Animations**: GSAP scroll animations + Three.js particle backgrounds
+- **Responsive**: Mobile-first design with Tailwind CSS v3
+- **Accessible**: WCAG AA compliant
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Next.js 16 + React 19 + TypeScript
+- Tailwind CSS v3
+- Lucide React icons
+- GSAP + Three.js animations
+- Sui Network (ready for integration)
+- Seal Protocol (ready for integration)
+- Walrus Protocol (ready for integration)
 
-## Deploy on Vercel
+## 🗂 Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+app/
+├── page.tsx              # Landing page
+├── create-twin/          # Twin creation wizard
+├── chat/[twinId]/        # Chat interface
+├── marketplace/          # AI twin marketplace
+└── dashboard/            # User dashboard
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+components/
+├── ui/                   # Reusable UI components
+├── layout/               # Navigation & Footer
+├── landing/              # Landing page sections
+├── ai-twin/              # Twin management components
+└── marketplace/          # Marketplace components
+```
+
+## 🎯 Pages
+
+1. **Landing** (`/`) - Hero, Features, How It Works, Use Cases
+2. **Create Twin** (`/create-twin`) - 3-step creation wizard
+3. **Chat** (`/chat/[id]`) - Interactive chat with AI twins
+4. **Marketplace** (`/marketplace`) - Browse & purchase twins
+5. **Dashboard** (`/dashboard`) - Analytics & management
+
+## 🎨 Color Palette
+
+```css
+Background: #0A0A0A, #141414, #1E1E1E
+Text: #F5F5F5, #A3A3A3, #525252
+Accent: #D97706 (amber), #DC2626 (crimson)
+Success: #059669, Error: #DC2626
+```
+
+## 🚀 Deployment
+
+```bash
+npm run build
+npm start
+```
+
+Deploy to Vercel with one click or use your preferred hosting platform.
+
+## 📄 License
+
+MIT License - Built for hackathon demonstration
+
+---
+
+**Built with ❤️ for the future of digital identity**
