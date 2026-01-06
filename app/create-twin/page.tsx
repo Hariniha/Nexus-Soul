@@ -13,6 +13,8 @@ import { Users, Wallet, AlertCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useCurrentAccount } from '@mysten/dapp-kit';
 
+
+
 interface AITwin {
   id: string;
   name: string;
